@@ -1,22 +1,25 @@
-using System.IO;
-using UnityEngine;
+using System.Text;
+using Random = UnityEngine.Random;
 
 namespace Pysijuice.Ciphers {
-    public class VernamKeyGenerator : MonoBehaviour {
-        private const string FILE_PATH = "Assets/Data/VernamKey.txt";
-        private const int FILE_SIZE = 1000;
+    public class VernamKeyGenerator {
+        public static void GenerateKey() {
+            var plainText = VernamFileSystem.ReadFile(VernamFileType.PlainText);
+            var lengthOfKey = plainText.Length;
+            var keyInfo = new StringBuilder();
 
-        private void Awake() {
-            GenerateKeyFile();
-        }
+            for (var i = 0; i < lengthOfKey; i++) {
+                if (!char.IsLetter(plainText[i])) {
+                    keyInfo.Append(plainText[i]);
+                    continue;
+                }
 
-        private void GenerateKeyFile() {
-            using var writer = new StreamWriter(FILE_PATH);
+                var randomChar = (char)Random.Range('a', 'z' + 1);
 
-            for (var i = 0; i <= FILE_SIZE; i++) {
-                var randomChar = (char)Random.Range('A', 'Z' + 1);
-                writer.Write(randomChar);
+                keyInfo.Append(randomChar);
             }
+
+            VernamFileSystem.WriteFile(keyInfo.ToString(), VernamFileType.Key);
         }
     }
 }
