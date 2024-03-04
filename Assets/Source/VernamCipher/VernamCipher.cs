@@ -1,46 +1,30 @@
-using System.Text;
-
 namespace Pysijuice.Ciphers {
     public class VernamCipher {
         // dirty implementation 
         public static void Encrypt() {
-            var plainText = Encoding.UTF8.GetBytes(VernamFileSystem.ReadFile(VernamFileType.PlainText).ToLower());
-            var keyText = Encoding.UTF8.GetBytes(VernamFileSystem.ReadFile(VernamFileType.Key));
-            var encryptedText = new byte[plainText.Length];
+            var plainText = VernamFileSystem.ReadFile(VernamFileType.PlainText);
+            var keyText = VernamFileSystem.ReadFile(VernamFileType.Key);
+            var encryptedText = new char[plainText.Length];
 
             for (var i = 0; i < encryptedText.Length; i++) {
-                if (!char.IsLetter((char)plainText[i])) {
-                    encryptedText[i] = plainText[i];
-                    continue;
-                }
+                encryptedText[i] = (char)(plainText[i] ^ keyText[i]);
 
-                encryptedText[i] = (byte)(plainText[i] ^ keyText[i]);
-
-                if (encryptedText[i] > 25) {
-                    encryptedText[i] -= 26;
-                }
-
-                encryptedText[i] += (byte)'a';
+                encryptedText[i] += 'a';
             }
 
-            VernamFileSystem.WriteFile(Encoding.UTF8.GetString(encryptedText), VernamFileType.Encrypted);
+            VernamFileSystem.WriteFile(new string(encryptedText), VernamFileType.Encrypted);
         }
 
         public static void Decrypt() {
-            var encryptedText = Encoding.UTF8.GetBytes(VernamFileSystem.ReadFile(VernamFileType.Encrypted));
-            var keyText = Encoding.UTF8.GetBytes(VernamFileSystem.ReadFile(VernamFileType.Key));
-            var decryptedText = new byte[encryptedText.Length];
+            var encryptedText = VernamFileSystem.ReadFile(VernamFileType.Encrypted);
+            var keyText = VernamFileSystem.ReadFile(VernamFileType.Key);
+            var decryptedText = new char[encryptedText.Length];
 
             for (var i = 0; i < decryptedText.Length; i++) {
-                if (!char.IsLetter((char)encryptedText[i])) {
-                    decryptedText[i] = encryptedText[i];
-                    continue;
-                }
-
-                decryptedText[i] = (byte)(encryptedText[i] ^ keyText[i]);
+                decryptedText[i] = (char)(encryptedText[i] - 'a' ^ keyText[i]);
             }
 
-            VernamFileSystem.WriteFile(Encoding.UTF8.GetString(decryptedText), VernamFileType.Decrypted);
+            VernamFileSystem.WriteFile(new string(decryptedText), VernamFileType.Decrypted);
         }
     }
 }
