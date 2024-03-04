@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 278193721}
   - component: {fileID: 278193720}
   m_Layer: 5
-  m_Name: Decrypt Button
+  m_Name: FindEntropy Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -325,7 +325,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 981616795}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Pysijuice.Ciphers.VernamControlUI, Assembly-CSharp
         m_MethodName: Decrypt
         m_Mode: 1
@@ -1161,14 +1161,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 981616793}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9df90ce94135f340a04d1a0b2f97768, type: 3}
+  m_Script: {fileID: 11500000, guid: 235305ba95d75c84db1a036e8bb80c53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   RawTextField: {fileID: 810923355}
-  RawText: {fileID: 1345689304}
-  KeyText: {fileID: 1688423258}
-  EncryptedText: {fileID: 850568055}
-  DecryptedText: {fileID: 1692107444}
+  RawText: {fileID: 849551530}
+  FrequencyText: {fileID: 1749243776}
+  EntropyText: {fileID: 1688423258}
 --- !u!1 &1209207806
 GameObject:
   m_ObjectHideFlags: 0
@@ -1227,7 +1226,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Encrypt
+  m_text: Find Frequency
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1362,7 +1361,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Decrypt
+  m_text: Find Entropy
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1451,7 +1450,7 @@ GameObject:
   - component: {fileID: 1286981683}
   - component: {fileID: 1286981682}
   m_Layer: 5
-  m_Name: Decrypted Text
+  m_Name: ??? Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1498,7 +1497,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Decoded Text
+  m_text: ???
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1793,7 +1792,7 @@ GameObject:
   - component: {fileID: 1441890523}
   - component: {fileID: 1441890522}
   m_Layer: 5
-  m_Name: Encrypt Button
+  m_Name: FindFrequency Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1865,8 +1864,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 981616795}
-        m_TargetAssemblyTypeName: Pysijuice.Ciphers.VernamControlUI, Assembly-CSharp
-        m_MethodName: Encrypt
+        m_TargetAssemblyTypeName: Pysijuice.Ciphers.EntropyControlUI, Assembly-CSharp
+        m_MethodName: FindFrequency
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1914,50 +1913,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1441890520}
   m_CullTransparentMesh: 1
---- !u!1 &1582457652
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1582457653}
-  - component: {fileID: 1582457654}
-  m_Layer: 0
-  m_Name: RC4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1582457653
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1582457652}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 688.63086, y: 34.472107, z: 15.434082}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1582457654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1582457652}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3456f52f3eeebdb46bffcb157893f0c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1688423256
 GameObject:
   m_ObjectHideFlags: 0
@@ -2016,7 +1971,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: None
+  m_text: NaN
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2289,7 +2244,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Current Key:'
+  m_text: 'Entropy:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2534,7 +2489,7 @@ GameObject:
   - component: {fileID: 1749243777}
   - component: {fileID: 1749243776}
   m_Layer: 5
-  m_Name: Encrypted Text
+  m_Name: Frequency Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2581,7 +2536,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Encoded Text
+  m_text: Frequency
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
