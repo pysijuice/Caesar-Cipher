@@ -15,16 +15,24 @@ namespace Pysijuice.Ciphers {
             }
 
             EntropyFileSystem.WriteFile(RawTextField.text, EntropyFileType.Text);
+            FrequencyCalculator.Calculate();
 
-            var frequency = FrequencyCalculator.Calculate();
-
-            EntropyFileSystem.WriteFile(frequency, EntropyFileType.Frequency);
+            var frequency = EntropyFileSystem.ReadFile(EntropyFileType.Frequency);
 
             RawText.text = RawTextField.text;
             FrequencyText.text = frequency;
         }
 
         public void FindEntropy() {
+            if (string.IsNullOrEmpty(RawText.text) || string.IsNullOrEmpty(FrequencyText.text)) {
+                return;
+            }
+
+            EntropyCalculator.Calculate();
+
+            var entropy = EntropyFileSystem.ReadFile(EntropyFileType.Entropy);
+
+            EntropyText.text = entropy;
         }
     }
 }

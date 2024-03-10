@@ -10,7 +10,7 @@ namespace Pysijuice.Ciphers {
         }
 
         public static string ReadFile(EntropyFileType type) {
-                return File.ReadAllText(SelectType(type));
+            return File.ReadAllText(SelectType(type));
         }
 
         private static string SelectType(EntropyFileType type) {
@@ -20,6 +20,12 @@ namespace Pysijuice.Ciphers {
 
                 case EntropyFileType.Frequency:
                     return EntropyFilePaths.FREQUENCY_PATH;
+
+                case EntropyFileType.FrequencyJson:
+                    return EntropyFilePaths.FREQUENCY_JSON_PATH;
+
+                case EntropyFileType.Entropy:
+                    return EntropyFilePaths.ENTROPY;
 
                 default:
                     throw new Exception();

@@ -1,4 +1,6 @@
 public enum EntropyFileType {
     Text,
-    Frequency
+    Frequency,
+    FrequencyJson,
+    Entropy
 }

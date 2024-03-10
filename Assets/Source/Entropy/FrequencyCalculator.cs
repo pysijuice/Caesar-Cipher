@@ -1,8 +1,9 @@
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace Pysijuice.Ciphers {
     public class FrequencyCalculator {
-        public static string Calculate() {
+        public static void Calculate() {
             var frequencies = new Dictionary<char, int>();
             var text = EntropyFileSystem.ReadFile(EntropyFileType.Text);
 
@@ -18,7 +19,8 @@ namespace Pysijuice.Ciphers {
                 result += $"{pair.Key}: {pair.Value}, ";
             }
 
-            return result;
+            EntropyFileSystem.WriteFile(JsonConvert.SerializeObject(frequencies), EntropyFileType.FrequencyJson);
+            EntropyFileSystem.WriteFile(result, EntropyFileType.Frequency);
         }
     }
 }
