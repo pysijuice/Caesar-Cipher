@@ -3,6 +3,9 @@
  Caesar Cipher with encoder, decoder, detection key and brute-force Latin alphabet.
 ![Гифка с Gifius ru](https://github.com/pysijuice/Caesar-Cipher/assets/73884491/7ba0b861-06b6-4023-a603-89d4c9b31573)
 
+# Entropy
+![Гифка с Gifius ru(1)](https://github.com/pysijuice/Crypto/assets/73884491/8a4a5b28-acc3-43e5-a86a-c51215abedc8)
+
 # Vernam Cipher
 ![Vernam Cipher](https://github.com/pysijuice/Crypto/assets/73884491/939a012a-92b4-4621-aa99-6c5e1b72492d)
 
