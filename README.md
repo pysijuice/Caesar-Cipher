@@ -12,4 +12,8 @@
 # RC4
 ![image](https://github.com/pysijuice/Crypto/assets/73884491/c45de426-c8bd-4a7b-b828-2d77514f4b6a)
 
+# AES
+
+![Гифка с Gifius ru(3)](https://github.com/pysijuice/Crypto/assets/73884491/ef5aa9c7-b53e-4a6e-a7ee-9f6b401ddae8)
+
 
