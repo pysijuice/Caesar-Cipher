@@ -15,4 +15,5 @@
 # AES
 ![Гифка с Gifius ru(3)](https://github.com/pysijuice/Crypto/assets/73884491/ef5aa9c7-b53e-4a6e-a7ee-9f6b401ddae8)
 
-
+# CryptoHashFunction
+![ezgif com-animated-gif-maker](https://github.com/pysijuice/Crypto/assets/73884491/8224448f-b727-43df-80e3-51f2b3895855)
