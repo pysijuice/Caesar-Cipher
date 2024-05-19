@@ -17,3 +17,10 @@
 
 # CryptoHashFunction [SHA-256]
 ![ezgif com-animated-gif-maker](https://github.com/pysijuice/Crypto/assets/73884491/8224448f-b727-43df-80e3-51f2b3895855)
+
+# Steganography (LSB)
+RawImage: ![image](https://github.com/pysijuice/Crypto/assets/73884491/d7ca7dca-6f1f-4476-b0a6-227a33a5b53c)
+<br/> 
+EncodedImage: ![image](https://github.com/pysijuice/Crypto/assets/73884491/4f2b489f-b57c-4191-9661-5a9f7051bef6)
+
+
