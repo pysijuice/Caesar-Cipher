@@ -58,11 +58,11 @@ namespace Pysijuice.Ciphers {
 
                 if (babySteps.ContainsValue(value)) {
                     _matchedNumber = value;
-                    Debug.Log($"[BabyStepGiantStep] Giant step: a^({i} * m) mod p = {value} (index = {i})");
+                    Debug.Log($"Giant step: a^({i} * m) mod p = {value} (index = {i})");
                     return i;
                 }
 
-                Debug.Log($"[BabyStepGiantStep] Giant step: a^({i} * m) mod p = {value} (index = {i})");
+                Debug.Log($"Giant step: a^({i} * m) mod p = {value} (index = {i})");
             }
             throw new ArgumentNullException("[BabyStepGiantStep] There's no matching in the Baby step and the Giant step");
         }
